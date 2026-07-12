@@ -1,0 +1,17 @@
+/* src/components/Preloader/Preloader.css */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E11D48;
+}
+
+.preloader-title {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}

@@ -1,0 +1,211 @@
+/* src/components/Hero/Hero.css */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 2rem;
+  max-width: 800px;
+  pointer-events: none;
+  margin-top: 4rem;
+}
+
+.hero-content a {
+  pointer-events: auto;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.hero-highlight {
+  color: #E11D48;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  padding: 0.9rem 2.5rem;
+  background: #E11D48;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.btn-primary:hover {
+  background: #BE123C;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(225, 29, 72, 0.4);
+}
+
+.btn-secondary {
+  padding: 0.9rem 2.5rem;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #0F0F0F;
+  transform: translateY(-3px);
+}
+
+/* Click Hint */
+.click-hint {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  animation: pulseHint 2s ease-in-out infinite;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulseHint {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+}
+
+/* Mute Button */
+.mute-btn {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.mute-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 3rem;
+  }
+
+  .mute-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+  
+  .click-hint {
+    bottom: 4rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    margin-top: 2rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .mute-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+    bottom: 0.8rem;
+    right: 0.8rem;
+  }
+  
+  .click-hint {
+    display: none;
+  }
+}
