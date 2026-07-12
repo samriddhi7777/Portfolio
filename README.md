@@ -1,7 +1,5 @@
 # 🚀 Personal Portfolio
 
-(https://sprightly-syrniki-2a2ab3.netlify.app)
-
 My personal portfolio website built with React, Vite, and Framer Motion. Features an AI avatar video introduction, interactive UI, and a modern dark theme design. Showcases my projects, skills, certifications, and experience as a Full Stack Developer.
 
 ## 🌐 Live Demo
